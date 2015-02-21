@@ -1,9 +1,9 @@
 {
-  "name": "movies",
+  "name": "angular-testing",
   "private": true,
   "version": "0.0.1",
-  "description": "Simple movie collection app.",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "Simple movie collection app for showing angular testing.",
+  "repository": "https://github.com/wholladay/angular-testing",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",

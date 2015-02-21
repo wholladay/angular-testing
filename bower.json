@@ -1,6 +1,6 @@
 {
-  "name": "movies",
-  "description": "Simple movie collection app.",
+  "name": "angular-testing",
+  "description": "Simple movie collection app for showing angular testing.",
   "version": "0.0.1",
   "homepage": "https://github.com/angular/angular-seed",
   "license": "MIT",

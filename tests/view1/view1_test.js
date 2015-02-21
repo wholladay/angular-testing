@@ -1,6 +1,6 @@
-'use strict';
-
+/* global describe, beforeEach, module, it, inject, expect */
 describe('myApp.view1 module', function() {
+    'use strict';
 
   beforeEach(module('myApp.view1'));
 
