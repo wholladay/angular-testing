@@ -1,4 +1,14 @@
-<h3>Movies!</h3>
-<div>
-    {{movies}}
-</div>
+<md-content layout="row">
+    <div flex></div>
+    <md-list flex>
+        <md-item ng-repeat="movie in movies">
+            <md-item-content>
+                <div class="md-title-content">
+                    <h3>{{movie.title}}</h3>
+                    <p>{{movie.rating}}: {{movie.format}} &mdash; {{movie.genre}}<span ng-if="movie.subGenre && movie.subGenre !== 'None'">, {{movie.subGenre}}</span></p>
+                </div>
+            </md-item-content>
+        </md-item>
+    </md-list>
+    <div flex></div>
+</md-content>
