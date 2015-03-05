@@ -1,3 +1,4 @@
+/* global exports */
 exports.config = {
   allScriptsTimeout: 11000,
 
@@ -9,7 +10,7 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  baseUrl: 'http://localhost:8000/app/',
+  baseUrl: 'http://localhost:3000/',
 
   framework: 'jasmine',
 
