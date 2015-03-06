@@ -1,26 +1,39 @@
-/* global angular */
-var movies = angular.module('myApp.movies', ['ngRoute']);
+/* global myApp */
+//var movies = angular.module('myApp.movies', ['ngRoute', 'ngMaterial']);
 
-movies.config(['$routeProvider', function($routeProvider) {
-    'use strict';
-    $routeProvider.when('/movies', {
-        templateUrl: 'movies/movies.html',
-        controller: 'MovieController'
-    });
-}]);
+//movies.config(['$routeProvider', function($routeProvider) {
+//    'use strict';
+//    $routeProvider.when('/movies', {
+//        templateUrl: 'movies/movies.html',
+//        controller: 'MovieController'
+//    });
+//}]);
 
-movies.controller('MovieController', ['$scope', 'MovieService', function($scope, MovieService) {
+myApp.controller('MovieController', ['$scope', 'MovieService', '$mdSidenav', function($scope, MovieService, $mdSidenav) {
+    //movies.controller('MovieController', ['$scope', 'MovieService', '$mdSidenav', function($scope, MovieService, $mdSidenav) {
     'use strict';
+    var self = this;
+
+    self.toggleMenu = toggleMenu;
+    self.movies = [];
+
+    // *********************************
+    // Internal methods
+    // *********************************
+
+    /**
+     * Hide or Show the 'left' sideNav area
+     */
+    function toggleMenu() {
+        $mdSidenav('left').toggle();
+    }
 
     function getMovies() {
         MovieService.getMovies().then(function(data) {
-            $scope.movies = data;
+            self.movies = data;
         });
     }
 
-    function init() {
-        getMovies();
-    }
+    getMovies();
 
-    init();
 }]);
