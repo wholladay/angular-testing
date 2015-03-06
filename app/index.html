@@ -25,11 +25,12 @@
 
     <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
         <h3>Sidebar content</h3>
+        <input type="text" ng-model="filterVal"/>
     </md-sidenav>
 
     <md-content flex id="content">
         <md-list>
-            <md-item ng-repeat="movie in mc.movies">
+            <md-item ng-repeat="movie in mc.movies | filter : filterVal">
                 <md-item-content>
                     <div class="md-title-content">
                         <h3>{{movie.title}}</h3>
