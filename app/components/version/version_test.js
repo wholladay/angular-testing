@@ -1,6 +1,6 @@
-'use strict';
-
+/* global describe, beforeEach, module, it, expect, inject */
 describe('myApp.version module', function() {
+    'use strict';
   beforeEach(module('myApp.version'));
 
   describe('version service', function() {

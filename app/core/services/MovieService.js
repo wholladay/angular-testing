@@ -1,5 +1,5 @@
 /* global angular */
-var services = angular.module('myApp.services', ['ngRoute']);
+var services = angular.module('myApp.services', []);
 services.service('MovieService', ['$http', '$q', function($http, $q) {
     'use strict';
     return {

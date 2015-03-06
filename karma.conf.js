@@ -12,9 +12,10 @@ module.exports = function(config) {
             'app/bower_components/angular-loader/angular-loader.js',
             'app/bower_components/angular-material/angular-material.js',
             'app/bower_components/angular-mocks/angular-mocks.js',
-            'app/bower_components/angular-route/angular-route.js',
+            'app/app.js',
             'app/components/**/*.js',
-            'app/view*/**/*.js',
+            'app/core/**/*.js',
+            'app/movies/**/*.js',
             'tests/**/*.js'
         ],
 

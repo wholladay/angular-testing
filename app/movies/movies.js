@@ -1,16 +1,5 @@
 /* global myApp */
-//var movies = angular.module('myApp.movies', ['ngRoute', 'ngMaterial']);
-
-//movies.config(['$routeProvider', function($routeProvider) {
-//    'use strict';
-//    $routeProvider.when('/movies', {
-//        templateUrl: 'movies/movies.html',
-//        controller: 'MovieController'
-//    });
-//}]);
-
 myApp.controller('MovieController', ['$scope', 'MovieService', '$mdSidenav', function($scope, MovieService, $mdSidenav) {
-    //movies.controller('MovieController', ['$scope', 'MovieService', '$mdSidenav', function($scope, MovieService, $mdSidenav) {
     'use strict';
     var self = this;
 
