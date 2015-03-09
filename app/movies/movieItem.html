@@ -1,0 +1,11 @@
+<md-item>
+    <md-item-content>
+        <div class="md-title-content">
+            <h3>{{movie.number}} {{movie.title}}</h3>
+
+            <p>
+                {{movie.rating}}: {{movie.format}} &mdash; {{[movie.genre, movie.subGenre]|genre}}
+            </p>
+        </div>
+    </md-item-content>
+</md-item>

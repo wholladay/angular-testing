@@ -9,7 +9,7 @@ var movies = JSON.parse(fs.readFileSync(__dirname + '/movies.json', 'utf8'));
 app.use(express.static(path.join(__dirname, 'app')));
 app.get('/', function(req, res) {
     'use strict';
-    res.sendFile(__dirname + '/app/index.html');
+    res.sendFile(__dirname + '/app/movies/movies.html');
 });
 app.get('/movies', function(req, res) {
     'use strict';
