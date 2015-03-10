@@ -4,7 +4,24 @@ myApp.controller('MovieController', ['$scope', 'MovieService', '$mdSidenav', fun
     var self = this;
 
     self.toggleMenu = toggleMenu;
+    self.filterFunc = filterBy;
+    self.criteriaMatch = criteriaMatch;
     self.movies = [];
+    self.ratings = [
+        {label: 'Any', value: 0},
+        {label: 'G', value: 1},
+        {label: 'PG', value: 2},
+        {label: 'PG-13', value: 3}
+    ];
+    self.formats = [
+        {label: 'Any', value: 0},
+        {label: 'VHS', value: 1},
+        {label: 'DVD', value: 2},
+        {label: 'Blu-ray', value: 3}
+    ];
+    self.criteria = {
+        //rating: self.ratings[0].label
+    };
 
     // *********************************
     // Internal methods
@@ -15,6 +32,28 @@ myApp.controller('MovieController', ['$scope', 'MovieService', '$mdSidenav', fun
      */
     function toggleMenu() {
         $mdSidenav('left').toggle();
+    }
+
+    function criteriaMatch(criteria) {
+        return function(item) {
+
+            if (criteria.title && !item.title.match(new RegExp(criteria.title, 'i'))) {
+                return false;
+            } else if (criteria.rating && criteria.rating !== 'Any' && item.rating !== criteria.rating) {
+                return false;
+            } else if (criteria.format && criteria.format !== 'Any' && item.format !== criteria.format) {
+                return false;
+            }
+
+            return true;
+        };
+    }
+
+    function filterBy(value) {
+        if (self.titleVal && value.title.indexOf(self.titleVal) === -1) {
+            return false;
+        }
+        return true;
     }
 
     function getMovies() {
