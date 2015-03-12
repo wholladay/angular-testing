@@ -6,7 +6,8 @@ var myApp = angular.module('myApp', [
     'myApp.version'
 ]);
 
-myApp.config(['$mdIconProvider', function($mdIconProvider) {
+myApp.config(['$mdIconProvider', '$httpProvider', function($mdIconProvider, $httpProvider) {
     'use strict';
     $mdIconProvider.icon("menu", "./assets/svg/menu.svg", 24);
+    $httpProvider.defaults.cache = true;
 }]);

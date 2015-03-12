@@ -31,10 +31,10 @@
                 <input ng-model="mc.criteria.title" placeholder="Enter any part of title">
             </md-input-container>
             <md-select ng-model="mc.criteria.rating" placeholder="Rating">
-                <md-option ng-value="rating.label" ng-repeat="rating in mc.ratings">{{rating.label}}</md-option>
+                <md-option ng-value="rating" ng-repeat="rating in mc.ratings">{{rating}}</md-option>
             </md-select>
             <md-select ng-model="mc.criteria.format" placeholder="Format">
-                <md-option ng-value="format.label" ng-repeat="format in mc.formats">{{format.label}}</md-option>
+                <md-option ng-value="format" ng-repeat="format in mc.formats">{{format}}</md-option>
             </md-select>
         </md-content>
     </md-sidenav>
