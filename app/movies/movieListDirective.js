@@ -48,10 +48,13 @@ myApp.directive('movieList', ['$filter', 'MovieService', function($filter, Movie
 
             function sortByGenre() {
                 if (scope.movies.length > 0 && scope.orderSetting === 'genre') {
-                    scope.movies.sort(compareByGenre);
+                    // First filter the list of movies.
+                    var filteredMovies = $filter('filter')(scope.movies, scope.criteriaMatch());
+                    // Then sort the filtered movies by genre.
+                    filteredMovies.sort(compareByGenre);
                     scope.moviesByGenre = [];
                     var currentGroup = {name: null};
-                    angular.forEach(scope.movies, function(movie) {
+                    angular.forEach(filteredMovies, function(movie) {
                         var groupName = movie.genreName + ' - ' + movie.subGenreName;
                         if (groupName !== currentGroup.name) {
                             currentGroup = {name: groupName, movies: [movie]};
@@ -78,8 +81,8 @@ myApp.directive('movieList', ['$filter', 'MovieService', function($filter, Movie
                 });
 
                 scope.$watch('criteria', function() {
-                    //$filter('filter')(scope.movies, scope.criteriaMatch());
-                });
+                    sortByGenre();
+                }, true);
             }
 
             init();
