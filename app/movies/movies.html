@@ -39,15 +39,8 @@
         </md-content>
     </md-sidenav>
 
-    <md-content flex id="content">
-        <md-list>
-            <movie-item ng-repeat="movie in mc.movies | filter:mc.criteriaMatch(mc.criteria)"
-                        movie="movie"></movie-item>
-        </md-list>
-    </md-content>
+    <movie-list order-by="title" criteria="mc.criteria" class="movie-list"></movie-list>
 </div>
-
-<!--<div>Angular seed app: v<span app-version></span></div>-->
 
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -60,6 +53,7 @@
 <script src="app.js"></script>
 <script src="core/services/MovieService.js"></script>
 <script src="movies/movies.js"></script>
+<script src="movies/movieListDirective.js"></script>
 <script src="movies/movieItemDirective.js"></script>
 <script src="movies/genreFilter.js"></script>
 <script src="components/version/version.js"></script>

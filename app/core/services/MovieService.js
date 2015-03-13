@@ -3,6 +3,25 @@ var services = angular.module('myApp.services', []);
 services.service('MovieService', ['$http', '$q', function($http, $q) {
     'use strict';
     return {
+        getJoinedMovies: function() {
+            var deferred = $q.defer();
+            $q.all([this.getMovies(), this.getRatings(), this.getGenres(), this.getFormats()]).then(function(data) {
+                var movies = data[0];
+                var ratings = data[1];
+                var genres = data[2];
+                var formats = data[3];
+                angular.forEach(movies, function(movie) {
+                    movie.ratingName = ratings['rating' + movie.rating];
+                    movie.genreName = genres['genre' + movie.genre];
+                    movie.subGenreName = genres['genre' + movie.subGenre];
+                    movie.formatName = formats['format' + movie.format];
+                });
+                deferred.resolve(movies);
+            }, function(error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        },
         getMovies: function() {
             var deferred = $q.defer();
             var url = '/movies';

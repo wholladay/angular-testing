@@ -2,8 +2,8 @@ html, body {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     height: 100%;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 /* Toolbar area */
@@ -34,7 +34,7 @@ md-list .md-button.selected {
 }
 
 md-sidenav md-list {
-    padding: 0px 0px 8px 0px;
+    padding: 0 0 8px 0;
 }
 
 /* Primary content area */
@@ -106,4 +106,9 @@ span.name {
     font-weight: bold;
     font-size: 1.1em;
     padding-left: 5px;
+}
+
+.movie-list {
+    width: 100%;
+    overflow: auto;
 }

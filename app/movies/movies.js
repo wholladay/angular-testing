@@ -4,13 +4,11 @@ myApp.controller('MovieController', ['$scope', 'MovieService', '$mdSidenav', fun
     var self = this;
 
     self.toggleMenu = toggleMenu;
-    //self.filterFunc = filterBy;
-    self.criteriaMatch = criteriaMatch;
+    self.orderBy = 'title';
     self.movies = [];
     self.ratings = ['Any'];
     self.formats = ['Any'];
     self.criteria = {
-        //rating: self.ratings[0].label
     };
 
     // *********************************
@@ -23,28 +21,6 @@ myApp.controller('MovieController', ['$scope', 'MovieService', '$mdSidenav', fun
     function toggleMenu() {
         $mdSidenav('left').toggle();
     }
-
-    function criteriaMatch(criteria) {
-        return function(item) {
-
-            if (criteria.title && !item.title.match(new RegExp(criteria.title, 'i'))) {
-                return false;
-            } else if (criteria.rating && criteria.rating !== 'Any' && item.ratingName !== criteria.rating) {
-                return false;
-            } else if (criteria.format && criteria.format !== 'Any' && item.formatName !== criteria.format) {
-                return false;
-            }
-
-            return true;
-        };
-    }
-
-    //function filterBy(value) {
-    //    if (self.titleVal && value.title.indexOf(self.titleVal) === -1) {
-    //        return false;
-    //    }
-    //    return true;
-    //}
 
     function getMovies() {
         MovieService.getMovies().then(function(data) {
@@ -74,7 +50,7 @@ myApp.controller('MovieController', ['$scope', 'MovieService', '$mdSidenav', fun
         });
     }
 
-    getMovies();
     getRatings();
     getFormats();
+    getMovies();
 }]);

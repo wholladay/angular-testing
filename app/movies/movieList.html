@@ -1,0 +1,6 @@
+<md-content flex id="content">
+    <md-list ng-if="orderSetting === 'title' || orderSetting === 'number'">
+        <movie-item ng-repeat="movie in movies | filter:criteriaMatch(criteria) | orderBy:orderSetting"
+                movie="movie"></movie-item>
+    </md-list>
+</md-content>
