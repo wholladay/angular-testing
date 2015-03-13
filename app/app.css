@@ -112,3 +112,8 @@ span.name {
     width: 100%;
     overflow: auto;
 }
+
+.optionOrderBy .md-text,
+.selectOrderBy .md-select-label {
+    text-transform: capitalize;
+}

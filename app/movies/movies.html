@@ -25,6 +25,10 @@
 
     <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
         <md-content class="md-padding" layout="column" style="font-size:1.2em">
+            <h3>Order By:</h3>
+            <md-select ng-model="mc.orderBy" class="selectOrderBy">
+                <md-option ng-value="obv" ng-repeat="obv in mc.orderByValues" class="optionOrderBy">{{obv}}</md-option>
+            </md-select>
             <h3>Filter By:</h3>
             <md-input-container flex>
                 <label>Title</label>
@@ -39,7 +43,7 @@
         </md-content>
     </md-sidenav>
 
-    <movie-list order-by="title" criteria="mc.criteria" class="movie-list"></movie-list>
+    <movie-list order-by="{{mc.orderBy}}" criteria="mc.criteria" class="movie-list"></movie-list>
 </div>
 
 <!-- In production use:

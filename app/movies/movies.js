@@ -4,7 +4,8 @@ myApp.controller('MovieController', ['$scope', 'MovieService', '$mdSidenav', fun
     var self = this;
 
     self.toggleMenu = toggleMenu;
-    self.orderBy = 'title';
+    self.orderByValues = ['title', 'number'];
+    self.orderBy = self.orderByValues[0];
     self.movies = [];
     self.ratings = ['Any'];
     self.formats = ['Any'];
