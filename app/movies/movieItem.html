@@ -1,9 +1,9 @@
 <md-item>
     <md-item-content>
         <div class="md-title-content">
-            <h3>{{movie.number}} {{movie.title}}</h3>
+            <h3 class="movieTitle"><span class="movieNumber">{{movie.number}}</span> {{movie.title}}</h3>
 
-            <p>
+            <p class="movieDetails">
                 {{movie.ratingName}}: {{movie.formatName}} &mdash; {{[movie.genreName, movie.subGenreName]|genre}}
             </p>
         </div>

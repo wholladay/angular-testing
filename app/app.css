@@ -117,3 +117,20 @@ span.name {
 .selectOrderBy .md-select-label {
     text-transform: capitalize;
 }
+
+.movieTitle {
+    margin-bottom: 4px;
+}
+
+.movieNumber {
+    min-width: 40px;
+    /* text-align: right; */
+    display: inline-block;
+    border-right: 1px solid;
+    margin-right: 4px;
+}
+
+.movieDetails {
+    margin-left: 54px;
+    margin-top: 0;
+}
