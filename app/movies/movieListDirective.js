@@ -1,5 +1,5 @@
 /* global myApp, angular */
-myApp.directive('movieList', ['MovieService', function(MovieService) {
+myApp.directive('movieList', ['$filter', 'MovieService', function($filter, MovieService) {
     'use strict';
     return {
         restrict: 'AE',
@@ -13,17 +13,16 @@ myApp.directive('movieList', ['MovieService', function(MovieService) {
             /**
              * @method criteriaMatch
              * @desc
-             * @param criteria
              * @returns {Function}
              */
-            scope.criteriaMatch = function criteriaMatch(criteria) {
+            scope.criteriaMatch = function criteriaMatch() {
                 return function(item) {
 
-                    if (criteria.title && !item.title.match(new RegExp(criteria.title, 'i'))) {
+                    if (scope.criteria.title && !item.title.match(new RegExp(scope.criteria.title, 'i'))) {
                         return false;
-                    } else if (criteria.rating && criteria.rating !== 'Any' && item.ratingName !== criteria.rating) {
+                    } else if (scope.criteria.rating && scope.criteria.rating !== 'Any' && item.ratingName !== scope.criteria.rating) {
                         return false;
-                    } else if (criteria.format && criteria.format !== 'Any' && item.formatName !== criteria.format) {
+                    } else if (scope.criteria.format && scope.criteria.format !== 'Any' && item.formatName !== scope.criteria.format) {
                         return false;
                     }
 
@@ -74,8 +73,12 @@ myApp.directive('movieList', ['MovieService', function(MovieService) {
                     sortByGenre();
                 });
 
-                scope.$watch('orderSetting', function(newVal) {
+                scope.$watch('orderSetting', function() {
                     sortByGenre();
+                });
+
+                scope.$watch('criteria', function() {
+                    //$filter('filter')(scope.movies, scope.criteriaMatch());
                 });
             }
 
