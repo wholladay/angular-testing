@@ -134,3 +134,19 @@ span.name {
     margin-left: 54px;
     margin-top: 0;
 }
+
+.sidebarTitle {
+    margin-bottom: 8px;
+}
+
+.sidebarSelect {
+    margin-top: 4px;
+}
+
+.sidebarInput {
+    padding-bottom: 8px;
+}
+
+.sidebarSectionDivider {
+    margin-top: 12px;
+}

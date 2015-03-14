@@ -25,21 +25,26 @@
 
     <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
         <md-content class="md-padding" layout="column" style="font-size:1.2em">
-            <h3>Order By:</h3>
-            <md-select ng-model="mc.orderBy" class="selectOrderBy">
-                <md-option ng-value="obv" ng-repeat="obv in mc.orderByValues" class="optionOrderBy">{{obv}}</md-option>
-            </md-select>
-            <h3>Filter By:</h3>
-            <md-input-container flex>
-                <label>Title</label>
-                <input ng-model="mc.criteria.title" placeholder="Enter any part of title">
-            </md-input-container>
-            <md-select ng-model="mc.criteria.rating" placeholder="Rating">
-                <md-option ng-value="rating" ng-repeat="rating in mc.ratings">{{rating}}</md-option>
-            </md-select>
-            <md-select ng-model="mc.criteria.format" placeholder="Format">
-                <md-option ng-value="format" ng-repeat="format in mc.formats">{{format}}</md-option>
-            </md-select>
+            <section>
+                <h3 class="sidebarTitle">Order By:</h3>
+                <md-select ng-model="mc.orderBy" class="selectOrderBy sidebarSelect">
+                    <md-option ng-value="obv" ng-repeat="obv in mc.orderByValues" class="optionOrderBy">{{obv}}
+                    </md-option>
+                </md-select>
+            </section>
+            <section layout="column" class="sidebarSectionDivider">
+                <h3 class="sidebarTitle">Filter By:</h3>
+                <md-input-container flex class="sidebarInput">
+                    <label>Title</label>
+                    <input ng-model="mc.criteria.title" placeholder="Enter any part of title">
+                </md-input-container>
+                <md-select ng-model="mc.criteria.rating" placeholder="Rating" class="sidebarSelect">
+                    <md-option ng-value="rating" ng-repeat="rating in mc.ratings">{{rating}}</md-option>
+                </md-select>
+                <md-select ng-model="mc.criteria.format" placeholder="Format" class="sidebarSelect">
+                    <md-option ng-value="format" ng-repeat="format in mc.formats">{{format}}</md-option>
+                </md-select>
+            </section>
         </md-content>
     </md-sidenav>
     <movie-list order-by="{{mc.orderBy}}" criteria="mc.criteria" class="movie-list"></movie-list>
