@@ -36,7 +36,11 @@
                 <h3 class="sidebarTitle">Filter By:</h3>
                 <md-input-container flex class="sidebarInput">
                     <label>Title</label>
-                    <input ng-model="mc.criteria.title" placeholder="Enter any part of title">
+                    <input ng-model="mc.criteria.title" placeholder="Enter any part of the title">
+                </md-input-container>
+                <md-input-container flex class="sidebarInput">
+                    <label>Genre</label>
+                    <input ng-model="mc.criteria.genre" placeholder="Select a specific genre">
                 </md-input-container>
                 <md-select ng-model="mc.criteria.rating" placeholder="Rating" class="sidebarSelect">
                     <md-option ng-value="rating" ng-repeat="rating in mc.ratings">{{rating}}</md-option>

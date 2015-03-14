@@ -17,8 +17,10 @@ myApp.directive('movieList', ['$filter', 'MovieService', function($filter, Movie
              */
             scope.criteriaMatch = function criteriaMatch() {
                 return function(item) {
-
-                    if (scope.criteria.title && !item.title.match(new RegExp(scope.criteria.title, 'i'))) {
+                    var criteria = scope.criteria;
+                    if (!titleMatch(item)) {
+                        return false;
+                    } else if (!genreMatch(item)) {
                         return false;
                     } else if (scope.criteria.rating && scope.criteria.rating !== 'Any' && item.ratingName !== scope.criteria.rating) {
                         return false;
@@ -29,6 +31,22 @@ myApp.directive('movieList', ['$filter', 'MovieService', function($filter, Movie
                     return true;
                 };
             };
+
+            function titleMatch(item) {
+                if (scope.criteria.title) {
+                    var titleRegExp = new RegExp(scope.criteria.title, 'i');
+                    return item.title.match(titleRegExp);
+                }
+                return true;
+            }
+
+            function genreMatch(item) {
+                if (scope.criteria.genre) {
+                    var genreRegEx = new RegExp(scope.criteria.genre, 'i');
+                    return (item.genreName.match(genreRegEx) || item.subGenreName.match(genreRegEx));
+                }
+                return true;
+            }
 
             function compareByGenre(movie1, movie2) {
                 var result = movie1.genreName.localeCompare(movie2.genreName);
