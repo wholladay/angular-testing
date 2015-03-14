@@ -63,11 +63,10 @@ myApp.directive('movieList', ['$filter', 'MovieService', function($filter, Movie
                     filteredMovies.sort(compareByGenre);
                     // Finally, divide the list into genre groups so that a heading can be displayed for each genre.
                     scope.moviesByGenre = [];
-                    var currentGroup = {name: null};
+                    var currentGroup = {genres: ['', '']};
                     angular.forEach(filteredMovies, function(movie) {
-                        var groupName = movie.genreName + ' - ' + movie.subGenreName;
-                        if (groupName !== currentGroup.name) {
-                            currentGroup = {name: groupName, movies: [movie]};
+                        if (movie.genreName !== currentGroup.genres[0] || movie.subGenreName !== currentGroup.genres[1]) {
+                            currentGroup = {genres: [movie.genreName, movie.subGenreName, ' - '], movies: [movie]};
                             scope.moviesByGenre.push(currentGroup);
                         } else {
                             currentGroup.movies.push(movie);

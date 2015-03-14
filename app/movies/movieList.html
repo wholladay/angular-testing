@@ -1,26 +1,26 @@
 <div layout="column" flex layout-fill>
 
-<md-content id="content">
-    <section ng-if="orderSetting === 'genre'" ng-repeat="movieGroup in moviesByGenre">
-        <md-subheader class="md-primary">{{movieGroup.name}}</md-subheader>
-        <md-list layout="column">
-            <movie-item ng-repeat="movie in movieGroup.movies" movie="movie">
-            </movie-item>
+    <md-content id="content">
+        <section ng-if="orderSetting === 'genre'" ng-repeat="movieGroup in moviesByGenre">
+            <md-subheader class="md-primary">{{movieGroup.genres|genre}}</md-subheader>
+            <md-list layout="column">
+                <movie-item ng-repeat="movie in movieGroup.movies" movie="movie">
+                </movie-item>
+            </md-list>
+        </section>
+        <md-list ng-if="orderSetting === 'title' || orderSetting === 'number'">
+            <movie-item ng-repeat="movie in movies | filter:criteriaMatch() | orderBy:orderSetting"
+                        movie="movie"></movie-item>
         </md-list>
-    </section>
-    <md-list ng-if="orderSetting === 'title' || orderSetting === 'number'">
-        <movie-item ng-repeat="movie in movies | filter:criteriaMatch() | orderBy:orderSetting"
-                    movie="movie"></movie-item>
-    </md-list>
-    <!--<md-list ng-if="orderSetting === 'genre'">-->
+        <!--<md-list ng-if="orderSetting === 'genre'">-->
         <!--<div ng-repeat="movieGroup in moviesByGenre">-->
-            <!--<md-toolbar class="md-theme-light">-->
-                <!--<h2 class="md-toolbar-tools">-->
-                    <!--<span>{{movieGroup.name}}</span>-->
-                <!--</h2>-->
-            <!--</md-toolbar>-->
-            <!--<movie-item ng-repeat="movie in movieGroup.movies" movie="movie"></movie-item>-->
+        <!--<md-toolbar class="md-theme-light">-->
+        <!--<h2 class="md-toolbar-tools">-->
+        <!--<span>{{movieGroup.name}}</span>-->
+        <!--</h2>-->
+        <!--</md-toolbar>-->
+        <!--<movie-item ng-repeat="movie in movieGroup.movies" movie="movie"></movie-item>-->
         <!--</div>-->
-    <!--</md-list>-->
-</md-content>
+        <!--</md-list>-->
+    </md-content>
 </div>
