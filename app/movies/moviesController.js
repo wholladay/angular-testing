@@ -1,16 +1,15 @@
 /* global myApp */
-myApp.controller('MoviesController', ['$scope', 'MovieService', '$mdSidenav', function($scope, MovieService, $mdSidenav) {
+//myApp.controller('MoviesController', ['$scope', 'MovieService', '$mdSidenav', function($scope, MovieService, $mdSidenav) {
+myApp.controller('MoviesController', ['MovieService', '$mdSidenav', function(MovieService, $mdSidenav) {
     'use strict';
     var self = this;
 
     self.toggleMenu = toggleMenu;
     self.orderByValues = ['title', 'number', 'genre'];
     self.orderBy = self.orderByValues[0];
-    self.movies = [];
     self.ratings = ['Any'];
     self.formats = ['Any'];
-    self.criteria = {
-    };
+    self.criteria = {};
 
     // *********************************
     // Internal methods
@@ -21,12 +20,6 @@ myApp.controller('MoviesController', ['$scope', 'MovieService', '$mdSidenav', fu
      */
     function toggleMenu() {
         $mdSidenav('left').toggle();
-    }
-
-    function getMovies() {
-        MovieService.getMovies().then(function(data) {
-            self.movies = data;
-        });
     }
 
     function getRatings() {
@@ -53,5 +46,4 @@ myApp.controller('MoviesController', ['$scope', 'MovieService', '$mdSidenav', fu
 
     getRatings();
     getFormats();
-    getMovies();
 }]);
