@@ -13,8 +13,6 @@ module.exports = function(config) {
             'app/bower_components/angular-material/angular-material.js',
             'app/bower_components/angular-mocks/angular-mocks.js',
             'app/app.js',
-            'app/components/**/*.js',
-            'app/core/**/*.js',
             'app/movies/**/*.js',
             'tests/**/*.js'
         ],

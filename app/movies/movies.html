@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="app.css">
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body ng-app="myApp" layout="column" ng-controller="MovieController as mc">
+<body ng-app="myApp" layout="column" ng-controller="MoviesController as mc">
 
 <md-toolbar layout="row">
     <md-button class="menu" hide-gt-sm ng-click="mc.toggleMenu()" aria-label="Show Menu">
@@ -63,13 +63,10 @@
 <script src="bower_components/angular-loader/angular-loader.js"></script>
 <script src="bower_components/angular-material/angular-material.js"></script>
 <script src="app.js"></script>
-<script src="core/services/MovieService.js"></script>
-<script src="movies/movies.js"></script>
+<script src="movies/MovieService.js"></script>
+<script src="movies/moviesController.js"></script>
 <script src="movies/movieListDirective.js"></script>
 <script src="movies/movieItemDirective.js"></script>
 <script src="movies/genreFilter.js"></script>
-<script src="components/version/version.js"></script>
-<script src="components/version/version-directive.js"></script>
-<script src="components/version/interpolate-filter.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@ describe('movies', function() {
 
         it('should ....', inject(function($controller) {
             //spec body
-            var movieCtrl = $controller('MovieController', {$scope:$rootScope.$new()});
+            var movieCtrl = $controller('MoviesController', {$scope:$rootScope.$new()});
             expect(movieCtrl).toBeDefined();
         }));
 

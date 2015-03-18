@@ -1,5 +1,5 @@
 /* global myApp */
-myApp.controller('MovieController', ['$scope', 'MovieService', '$mdSidenav', function($scope, MovieService, $mdSidenav) {
+myApp.controller('MoviesController', ['$scope', 'MovieService', '$mdSidenav', function($scope, MovieService, $mdSidenav) {
     'use strict';
     var self = this;
 
