@@ -1,8 +1,8 @@
-{
-  "rating1": "NR",
-  "rating2": "G",
-  "rating3": "PG",
-  "rating4": "PG-13",
-  "rating5": "R",
-  "rating6": "TV14"
-}
+[
+  {"ratingID": 1,"ratingName": "NR"},
+  {"ratingID": 2,"ratingName": "G"},
+  {"ratingID": 3,"ratingName": "PG"},
+  {"ratingID": 4,"ratingName": "PG-13"},
+  {"ratingID": 5,"ratingName": "R"},
+  {"ratingID": 6,"ratingName": "TV14"}
+]

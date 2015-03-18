@@ -1,5 +1,5 @@
-{
-  "format1": "VHS",
-  "format2": "DVD",
-  "format3": "Blu-ray"
-}
+[
+{"formatID": 1,"formatName": "VHS"},
+{"formatID": 2,"formatName": "DVD"},
+{"formatID": 3,"formatName": "Blu-ray"}
+]

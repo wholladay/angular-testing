@@ -2,6 +2,37 @@
 var services = angular.module('myApp.services', []);
 services.service('MovieService', ['$http', '$q', function($http, $q) {
     'use strict';
+    //////////////////////////////////////////////////////////////////
+    // PRIVATE VARIABLES AND METHODS
+    //////////////////////////////////////////////////////////////////
+
+    function convertFormats(rawFormats) {
+        var formats = {};
+        angular.forEach(rawFormats, function(rawFormat) {
+            formats['format'+rawFormat.formatID] = rawFormat.formatName;
+        });
+        return formats;
+    }
+
+    function convertGenres(rawGenres) {
+        var genres = {};
+        angular.forEach(rawGenres, function(rawGenre) {
+            genres['genre'+rawGenre.genreID] = rawGenre.genreName;
+        });
+        return genres;
+    }
+
+    function convertRatings(rawRatings) {
+        var ratings = {};
+        angular.forEach(rawRatings, function(rawRating) {
+            ratings['rating'+rawRating.ratingID] = rawRating.ratingName;
+        });
+        return ratings;
+    }
+
+    //////////////////////////////////////////////////////////////////
+    // PUBLIC INTERFACE
+    //////////////////////////////////////////////////////////////////
     return {
         getJoinedMovies: function() {
             var deferred = $q.defer();
@@ -35,8 +66,8 @@ services.service('MovieService', ['$http', '$q', function($http, $q) {
         getRatings: function() {
             var deferred = $q.defer();
             var url = '/ratings';
-            $http.get(url).success(function(ratings) {
-                deferred.resolve(ratings);
+            $http.get(url).success(function(rawRatings) {
+                deferred.resolve(convertRatings(rawRatings));
             }).error(function(error) {
                 deferred.reject(error);
             });
@@ -45,8 +76,8 @@ services.service('MovieService', ['$http', '$q', function($http, $q) {
         getGenres: function() {
             var deferred = $q.defer();
             var url = '/genres';
-            $http.get(url).success(function(genres) {
-                deferred.resolve(genres);
+            $http.get(url).success(function(rawGenres) {
+                deferred.resolve(convertGenres(rawGenres));
             }).error(function(error) {
                 deferred.reject(error);
             });
@@ -55,8 +86,8 @@ services.service('MovieService', ['$http', '$q', function($http, $q) {
         getFormats: function() {
             var deferred = $q.defer();
             var url = '/formats';
-            $http.get(url).success(function(formats) {
-                deferred.resolve(formats);
+            $http.get(url).success(function(rawFormats) {
+                deferred.resolve(convertFormats(rawFormats));
             }).error(function(error) {
                 deferred.reject(error);
             });
