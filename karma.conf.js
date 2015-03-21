@@ -14,7 +14,8 @@ module.exports = function(config) {
             'app/bower_components/angular-mocks/angular-mocks.js',
             'app/app.js',
             'app/movies/**/*.js',
-            'tests/**/*.js'
+            'tests/**/*.js',
+            'app/movies/**/*.html'
         ],
 
         // coverage reporter generates the coverage
@@ -26,7 +27,16 @@ module.exports = function(config) {
             // (these files will be instrumented by Istanbul)
             'app/components/**/*.js': ['coverage'],
             'app/core/**/*.js': ['coverage'],
-            'app/movies/**/*.js': ['coverage']
+            'app/movies/**/*.js': ['coverage'],
+            // Convert html files to js so Karma will serve them up.
+            'app/movies/**/*.html': ['ng-html2js']
+        },
+
+        ngHtml2JsPreprocessor: {
+            // setting this option will create only a single module that contains templates
+            // from all the files, so you can load them all with module('foo')
+            moduleName: 'templates',
+            stripPrefix: 'app/'
         },
 
         // optionally, configure the reporter
@@ -45,7 +55,8 @@ module.exports = function(config) {
             'karma-chrome-launcher',
             'karma-jasmine',
             'karma-coverage',
-            'karma-phantomjs-launcher'
+            'karma-phantomjs-launcher',
+            'karma-ng-html2js-preprocessor'
         ],
 
         junitReporter: {

@@ -1,5 +1,5 @@
 /* global myApp */
-myApp.directive('movieItem', ['MovieService', function(MovieService) {
+myApp.directive('movieItem', function() {
     'use strict';
     return {
         restrict: 'E',
@@ -10,4 +10,4 @@ myApp.directive('movieItem', ['MovieService', function(MovieService) {
         link: function(scope) {
         }
     };
-}]);
+});
