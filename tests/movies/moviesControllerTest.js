@@ -6,6 +6,7 @@ describe('movies controller', function() {
     var $q;
     var $timeout;
     var $httpBackend;
+    var MovieService;
 
     beforeEach(function() {
         module('myApp');
@@ -15,35 +16,39 @@ describe('movies controller', function() {
                 return {
                     getRatings: function() {
                         var deferred = $q.defer();
-                        function rating(first, second) {
+
+                        function Rating(first, second) {
                             this.rating1 = first;
                             this.rating2 = second;
                         }
-                        var ratings = new rating('G', 'PG');
-                        rating.prototype.whatever = 'hello';
+
+                        var ratings = new Rating('G', 'PG');
+                        Rating.prototype.whatever = 'hello';
                         deferred.resolve(ratings);
                         return deferred.promise;
                     },
                     getFormats: function() {
-                        function format(one, two) {
+                        function Format(one, two) {
                             this.format1 = one;
                             this.format2 = two;
                         }
+
                         var deferred = $q.defer();
-                        var formats = new format('VHS', 'DVD');
-                        format.prototype.super = 'uber';
+                        var formats = new Format('VHS', 'DVD');
+                        Format.prototype.super = 'uber';
                         deferred.resolve(formats);
                         return deferred.promise;
                     }
                 };
             });
         });
-        inject(function(_$rootScope_, _$controller_, _$q_, _$timeout_, _$httpBackend_) {
+        inject(function(_$rootScope_, _$controller_, _$q_, _$timeout_, _$httpBackend_, _MovieService_) {
             $rootScope = _$rootScope_;
             $controller = _$controller_;
             $q = _$q_;
             $timeout = _$timeout_;
             $httpBackend = _$httpBackend_;
+            MovieService = _MovieService_;
         });
     });
 
@@ -54,10 +59,19 @@ describe('movies controller', function() {
 
     describe('setup', function() {
 
+        it('should initialize using spyOn', function() {
+            var deferred = $q.defer();
+            deferred.resolve({format1: 'VHS', format2: 'DVD'});
+            spyOn(MovieService, 'getFormats').andReturn(deferred.promise);
+            var movieCtrl = $controller('MoviesController');
+            $timeout.flush();
+            expect(movieCtrl).toBeDefined();
+            expect(MovieService.getFormats).toHaveBeenCalled();
+        });
+
         it('should initialize', function() {
             //spec body
             var movieCtrl = $controller('MoviesController');
-            //var movieCtrl = $controller('MoviesController', {$scope: $rootScope.$new()});
             // $timeout.flush() is required to get the promise.resolve() methods to fire.
             $timeout.flush();
             expect(movieCtrl).toBeDefined();
@@ -74,4 +88,5 @@ describe('movies controller', function() {
         });
 
     });
+
 });
