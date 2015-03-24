@@ -26,7 +26,7 @@ describe('movie item', function() {
 
     it('should display a movie', function() {
         var title = 'Happy Gilmore';
-        var movie = {
+        $rootScope.movie =  {
             number: 1,
             title: title,
             ratingName: 'PG-13',
@@ -34,9 +34,10 @@ describe('movie item', function() {
             genreName: 'Comedy',
             subGenreName: 'Lousy'
         };
-        $rootScope.movie = movie;
         compileDirective();
         var movieNumber = element.find('span')[0].innerHTML;
         expect(movieNumber).toBe('1');
+        var movieInfo = element.find('p')[0].innerHTML;
+        expect(movieInfo).toContain('Lousy');
     });
 });
