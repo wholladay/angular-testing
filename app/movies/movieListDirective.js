@@ -22,9 +22,9 @@ myApp.directive('movieList', ['$filter', 'MovieService', function($filter, Movie
                         return false;
                     } else if (!genreMatch(item)) {
                         return false;
-                    } else if (scope.criteria.rating && scope.criteria.rating !== 'Any' && item.ratingName !== scope.criteria.rating) {
+                    } else if (criteria.rating && criteria.rating !== 'Any' && item.ratingName !== criteria.rating) {
                         return false;
-                    } else if (scope.criteria.format && scope.criteria.format !== 'Any' && item.formatName !== scope.criteria.format) {
+                    } else if (criteria.format && criteria.format !== 'Any' && item.formatName !== criteria.format) {
                         return false;
                     }
 

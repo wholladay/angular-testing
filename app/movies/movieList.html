@@ -12,15 +12,5 @@
             <movie-item ng-repeat="movie in movies | filter:criteriaMatch() | orderBy:orderSetting"
                         movie="movie"></movie-item>
         </md-list>
-        <!--<md-list ng-if="orderSetting === 'genre'">-->
-        <!--<div ng-repeat="movieGroup in moviesByGenre">-->
-        <!--<md-toolbar class="md-theme-light">-->
-        <!--<h2 class="md-toolbar-tools">-->
-        <!--<span>{{movieGroup.name}}</span>-->
-        <!--</h2>-->
-        <!--</md-toolbar>-->
-        <!--<movie-item ng-repeat="movie in movieGroup.movies" movie="movie"></movie-item>-->
-        <!--</div>-->
-        <!--</md-list>-->
     </md-content>
 </div>
