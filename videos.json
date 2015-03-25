@@ -1,6 +1,6 @@
 [
-  {"number": 1,"title": "101 Dalmations","rating": 2,"genre": 2,"subGenre": 5,"format": 1,"status": 2},
-  {"number": 2,"title": "Adventures of Pinochio, The","rating": 2,"genre": 4,"subGenre": 2,"format": 1,"status": 2},
+  {"number": 1,"title": "101 Dalmatians","rating": 2,"genre": 2,"subGenre": 5,"format": 1,"status": 2},
+  {"number": 2,"title": "Adventures of Pinocchio, The","rating": 2,"genre": 4,"subGenre": 2,"format": 1,"status": 2},
   {"number": 3,"title": "Aladdin","rating": 2,"genre": 2,"subGenre": 6,"format": 1,"status": 2},
   {"number": 4,"title": "Aladdin and the King of Thieves","rating": 1,"genre": 2,"subGenre": 4,"format": 1,"status": 2},
   {"number": 5,"title": "Alice in Wonderland","rating": 2,"genre": 2,"subGenre": 4,"format": 1,"status": 2},
