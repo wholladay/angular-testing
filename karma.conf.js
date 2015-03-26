@@ -14,7 +14,7 @@ module.exports = function(config) {
             'app/bower_components/angular-mocks/angular-mocks.js',
             'app/app.js',
             'app/movies/**/*.js',
-            'tests/**/*.js',
+            'tests/unit/**/*.js',
             'app/movies/**/*.html'
         ],
 
@@ -42,7 +42,7 @@ module.exports = function(config) {
         // optionally, configure the reporter
         coverageReporter: {
             type: 'html',
-            dir: 'coverage/'
+            dir: 'tests/coverage/'
         },
 
         autoWatch: true,
