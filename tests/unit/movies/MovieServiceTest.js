@@ -183,12 +183,12 @@ describe('MovieService', function() {
             movies = [
                 { "number": 18, "title": "Chitty Chitty Bang Band", "rating": 2, "genre": 4, "subGenre": 6, "format": 1, "status": 2 },
                 { "number": 19, "title": "Christmas Carol, A", "rating": 3, "genre": 4, "subGenre": 7, "format": 1, "status": 2 },
-                {"number": 20, "title": "Christy", "rating": 1, "genre": 3, "subGenre": 1, "format": 1, "status": 2},
+                { "number": 20, "title": "Christy", "rating": 1, "genre": 3, "subGenre": 1, "format": 1, "status": 2},
                 { "number": 21, "title": "Cinderella", "rating": 2, "genre": 2, "subGenre": 18, "format": 2, "status": 2 },
                 { "number": 22, "title": "Racing Stripes", "rating": 3, "genre": 18, "subGenre": 4, "format": 2, "status": 2 },
                 { "number": 23, "title": "Hunger Games, The", "rating": 4, "genre": 21, "subGenre": 3, "format": 2, "status": 2 },
                 { "number": 24, "title": "Doctor Dolittle", "rating": 2, "genre": 4, "subGenre": 6, "format": 1, "status": 2 },
-                {"number": 25, "title": "Dumbo", "rating": 2, "genre": 2, "subGenre": 1, "format": 1, "status": 2},
+                { "number": 25, "title": "Dumbo", "rating": 2, "genre": 2, "subGenre": 1, "format": 1, "status": 2},
                 { "number": 26, "title": "Star Wars V (The Empire Strikes Back)", "rating": 3, "genre": 13, "subGenre": 5, "format": 1, "status": 2 },
                 { "number": 27, "title": "42 The Jackie Robinson Story", "rating": 4, "genre": 3, "subGenre": 1, "format": 3, "status": 2 },
                 { "number": 28, "title": "Extremely Goofy Movie, An", "rating": 2, "genre": 2, "subGenre": 1, "format": 1, "status": 2 }
