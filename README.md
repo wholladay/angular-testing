@@ -199,13 +199,12 @@ This will find the latest versions that match the version ranges specified in th
 
 For more information on AngularJS please check out:
 * [AngularJS][ng]
-* [Git][git]
-* [Bower][bower]
-* [npm][npm]
-* [NodeJS][node]
+* [Karma][karma]
 * [Protractor][ptor]
 * [Jasmine][jasmine]
-* [Karma][karma]
+* [Mocha][mocha]
+* [Chai][chai]
+* [Sinon][sinon]
 
 [ng]: http://angularjs.org/
 [git]: http://git-scm.com/
@@ -215,3 +214,6 @@ For more information on AngularJS please check out:
 [ptor]: https://github.com/angular/protractor
 [jasmine]: http://jasmine.github.io
 [karma]: http://karma-runner.github.io
+[mocha]: http://mochajs.org
+[chai]: http://chaijs.com
+[sinon]: http://sinonjs.org
