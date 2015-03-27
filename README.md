@@ -138,7 +138,7 @@ npm run single
 ### End to end testing
 
 The angular-testing app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
-are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
+are run with the [Protractor][ptor] End-to-End test runner.  It uses native events and has
 special features for Angular applications.
 
 * the configuration is found at `e2e-tests/protractor-conf.js`
@@ -197,12 +197,21 @@ This will find the latest versions that match the version ranges specified in th
 
 ## More Information
 
-For more information on AngularJS please check out http://angularjs.org/
+For more information on AngularJS please check out:
+* [AngularJS][ng]
+* [Git][git]
+* [Bower][bower]
+* [npm][npm]
+* [NodeJS][node]
+* [Protractor][ptor]
+* [Jasmine][jasmine]
+* [Karma][karma]
 
+[ng]: http://angularjs.org/
 [git]: http://git-scm.com/
 [bower]: http://bower.io
 [npm]: https://www.npmjs.org/
 [node]: http://nodejs.org
-[protractor]: https://github.com/angular/protractor
+[ptor]: https://github.com/angular/protractor
 [jasmine]: http://jasmine.github.io
 [karma]: http://karma-runner.github.io
