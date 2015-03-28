@@ -62,7 +62,7 @@ describe('movies controller', function() {
         it('should initialize using spyOn', function() {
             var deferred = $q.defer();
             deferred.resolve({format1: 'VHS', format2: 'DVD'});
-            spyOn(MovieService, 'getFormats').andReturn(deferred.promise);
+            spyOn(MovieService, 'getFormats').and.returnValue(deferred.promise);
             var movieCtrl = $controller('MoviesController');
             $timeout.flush();
             expect(movieCtrl).toBeDefined();

@@ -201,10 +201,10 @@ describe('MovieService', function() {
         });
 
         it('should joined movies', function() {
-            spyOn(MovieService, 'getRatings').andCallFake(getRatings);
-            spyOn(MovieService, 'getGenres').andCallFake(getGenres);
-            spyOn(MovieService, 'getFormats').andCallFake(getFormats);
-            spyOn(MovieService, 'getMovies').andCallFake(getMovies);
+            spyOn(MovieService, 'getRatings').and.callFake(getRatings);
+            spyOn(MovieService, 'getGenres').and.callFake(getGenres);
+            spyOn(MovieService, 'getFormats').and.callFake(getFormats);
+            spyOn(MovieService, 'getMovies').and.callFake(getMovies);
             MovieService.getJoinedMovies().then(function(data) {
                 expect(movies.length).toBe(11);
                 expect(movies[0].ratingName).toBe('G');
@@ -218,10 +218,10 @@ describe('MovieService', function() {
         });
 
         it('should handle error when getting genres', function() {
-            spyOn(MovieService, 'getRatings').andCallFake(getRatings);
-            spyOn(MovieService, 'getFormats').andCallFake(getFormats);
-            spyOn(MovieService, 'getMovies').andCallFake(getMovies);
-            spyOn(MovieService, 'getGenres').andCallFake(rejectRequest);
+            spyOn(MovieService, 'getRatings').and.callFake(getRatings);
+            spyOn(MovieService, 'getFormats').and.callFake(getFormats);
+            spyOn(MovieService, 'getMovies').and.callFake(getMovies);
+            spyOn(MovieService, 'getGenres').and.callFake(rejectRequest);
             MovieService.getJoinedMovies().then(function(data) {
                 throw 'Success when error was expected.';
             },function(err) {

@@ -33,7 +33,7 @@ describe('movie list', function() {
             $compile = _$compile_;
             $q = _$q_;
             MovieService = _MovieService_;
-            spyOn(MovieService, 'getJoinedMovies').andCallFake(mockGetJoinedMovies);
+            spyOn(MovieService, 'getJoinedMovies').and.callFake(mockGetJoinedMovies);
         });
 
         movies = [{number: 1, title: 'All Dogs go to Heaven', ratingName: 'G', formatName: 'VHS', genreName: ''}];
